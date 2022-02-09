@@ -54,21 +54,21 @@ class RCCar():
         if (r < 0.5):
             d = 0
         elif (joy_d == 0):
-            d = 1
+            d = 1 # F
         elif (joy_d == 1):
-            d = 6
+            d = 7 # FR
         elif (joy_d == 2):
-            d = 4
+            d = 4 # R
         elif (joy_d == 3):
-            d = 8
+            d = 8 # BR
         elif (joy_d == 4):
-            d = 2
+            d = 2 # B
         elif (joy_d == 5):
-            d = 7
+            d = 6 # BL
         elif (joy_d == 6):
-            d = 3
+            d = 3 # L
         elif (joy_d == 7):
-            d = 4
+            d = 5 # FL
 
         return Commands.JoystickMovement(d)
 
