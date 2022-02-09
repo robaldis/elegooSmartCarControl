@@ -6,18 +6,17 @@ import math
 from control import TCP
 
 
+pygame.init()
 
 class RCCar():
     def __init__(self):
-        self.connect_socket()
-        pygame.init()
         self.width = 500
         self.height = 500
         self.screen = pygame.display.set_mode([self.width,self.height])
         self.x = 0.5
         self.y = 0.5
         self.joysticks = []
-        self.socket = self.conect_socket()
+
 
         print(pygame.joystick.get_count())
         for i in range(pygame.joystick.get_count()):
@@ -31,6 +30,7 @@ class RCCar():
         command = ""
         for event in pygame.event.get():
             if event.type == JOYAXISMOTION:
+                print("something")
                 self.controller.update(event)
                 # print ("Joystick '",self.joysticks[event.joy].get_name(),"' axis",event.axis,"motion.")
                 command = self.get_joystick_command()
